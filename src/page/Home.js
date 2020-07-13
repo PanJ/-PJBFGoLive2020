@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Header } from "../components/Header";
 import { WeddingDate } from "../components/WeddingDate";
-import WeddingTimeline from "../components/WeddingTimeline";
 
 export const Home = () => {
   return (
@@ -24,7 +23,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <WeddingTimeline></WeddingTimeline>
       <div className="hash-tag">#PJBFGoLive2020</div>
     </MainWrapper>
   );

@@ -6103,11 +6103,11 @@ video {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.font-thai {
+.font-th {
   font-family: Anuphan, Sukhumvit, Tahoma, sans-serif;
 }
 
-.font-eng {
+.font-en {
   font-family: Raleway, sans-serif;
 }
 
@@ -23487,11 +23487,11 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .sm\:font-thai {
+  .sm\:font-th {
     font-family: Anuphan, Sukhumvit, Tahoma, sans-serif;
   }
 
-  .sm\:font-eng {
+  .sm\:font-en {
     font-family: Raleway, sans-serif;
   }
 
@@ -40850,11 +40850,11 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .md\:font-thai {
+  .md\:font-th {
     font-family: Anuphan, Sukhumvit, Tahoma, sans-serif;
   }
 
-  .md\:font-eng {
+  .md\:font-en {
     font-family: Raleway, sans-serif;
   }
 
@@ -58213,11 +58213,11 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .lg\:font-thai {
+  .lg\:font-th {
     font-family: Anuphan, Sukhumvit, Tahoma, sans-serif;
   }
 
-  .lg\:font-eng {
+  .lg\:font-en {
     font-family: Raleway, sans-serif;
   }
 
@@ -75576,11 +75576,11 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .xl\:font-thai {
+  .xl\:font-th {
     font-family: Anuphan, Sukhumvit, Tahoma, sans-serif;
   }
 
-  .xl\:font-eng {
+  .xl\:font-en {
     font-family: Raleway, sans-serif;
   }
 

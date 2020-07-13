@@ -38,7 +38,7 @@ const scheduleItems = [
   },
 ];
 export default () => (
-  <div className="w-max flex flex-col text-green-dark text-xl my-8 font-eng">
+  <div className="w-max flex flex-col text-green-dark text-xl my-8 font-th">
     {scheduleItems.map((scheduleItem, index) => (
       <>
         <div className="w-max flex flex-row px-2">

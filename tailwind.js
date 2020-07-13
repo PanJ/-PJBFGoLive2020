@@ -259,8 +259,8 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
-      thai: ["Anuphan", "Sukhumvit", "Tahoma", "sans-serif"],
-      eng: ["Raleway", "sans-serif"],
+      th: ["Anuphan", "Sukhumvit", "Tahoma", "sans-serif"],
+      en: ["Raleway", "sans-serif"],
     },
     fontSize: {
       xs: "0.75rem",
