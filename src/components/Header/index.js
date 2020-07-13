@@ -31,6 +31,9 @@ const MainWrapper = styled.div`
   .wedding-logo-wrapper {
     width: 100%;
     text-align: center;
+    img {
+      margin: 0 auto;
+    }
   }
 
   .wedding-image-wrapper {
@@ -61,5 +64,8 @@ const MainWrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
+    img {
+      margin: 0 auto;
+    }
   }
 `;
