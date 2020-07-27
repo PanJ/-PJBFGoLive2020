@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import WeddingDate from "../components/WeddingDate";
 import WeddingLocation from "../components/WeddingLocation";
-import WeddingTimeline from "../components/WeddingTimeline";
 import heroImage from "../static/hero-2.jpg";
 import names from "../static/names.png";
 import footer from "../static/footer.jpg";

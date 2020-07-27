@@ -59,6 +59,7 @@ export default ({ date }) => {
       </div>
       <a
         href="https://goo.gl/maps/UkHJsGGz9BqX8oGg7"
+        rel="noopener noreferrer"
         target="_blank"
         className="block mt-6 text-white bg-rose mx-4 font-th py-2 px-6 font-bold border-solid rounded mx-auto"
       >
