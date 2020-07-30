@@ -14,9 +14,6 @@ const login = async () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   await auth.signInWithRedirect(provider);
 };
-const logout = async () => {
-  auth.signOut();
-};
 
 const activeButton =
   "font-bold w-1/3 block text-white bg-rose block my-2 mx-2 font-th p-2 rounded";
@@ -24,9 +21,9 @@ const normalButton =
   "font-bold w-1/3 block hover:text-white hover:bg-rose block my-2 mx-2 text-rose font-th p-2 border-solid border border-rose rounded";
 
 export const WeddingReception = () => {
-  const [user, authLoading, authError] = useAuthState(auth);
+  const [user, authLoading] = useAuthState(auth);
   const ref = user ? firebase.database().ref(`users/${user.uid}`) : null;
-  const [userData, userLoading, userError] = useObjectVal(ref);
+  const [userData, userLoading] = useObjectVal(ref);
   console.log(user, userData);
   useEffect(() => {
     const answer = window.localStorage.getItem("answer");
