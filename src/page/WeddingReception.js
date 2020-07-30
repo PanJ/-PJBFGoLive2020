@@ -27,9 +27,14 @@ export const WeddingReception = () => {
   console.log(user, userData);
   useEffect(() => {
     const answer = window.localStorage.getItem("answer");
-    if (answer) {
+    if (answer && user && (!userData || userData.answer !== answer)) {
+      ref.update({
+        answer,
+        guest: 0,
+      });
+      window.localStorage.setItem("answer", null);
     }
-  }, []);
+  }, [user, ref, userData]);
   useEffect(() => {
     if (user && !userLoading && (!userData || !userData.displayName)) {
       ref.update({
