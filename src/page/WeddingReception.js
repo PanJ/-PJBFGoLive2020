@@ -178,7 +178,7 @@ export const WeddingReception = () => {
                   className="w-full h-40 p-4 border border-solid border-lightGreen rounded"
                 ></textarea>
               </div>
-              {userData.message.length > 3 && (
+              {userData.message && userData.message.length > 3 && (
                 <p className="mt-6 w-3/4 mx-auto text-lightGreen">
                   Your message is auto-saved!
                 </p>
