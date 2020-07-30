@@ -32,7 +32,7 @@ export const WeddingReception = () => {
         answer,
         guest: 0,
       });
-      window.localStorage.setItem("answer", null);
+      window.localStorage.removeItem("answer");
     }
   }, [user, ref, userData]);
   useEffect(() => {
