@@ -62,6 +62,7 @@ module.exports = {
         900: "#744210",
       },
       green: "#264A39",
+      lightGreen: "#cfd7bb",
       teal: {
         100: "#e6fffa",
         200: "#b2f5ea",
