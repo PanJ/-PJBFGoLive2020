@@ -24,7 +24,6 @@ export const WeddingReception = () => {
   const [user, authLoading] = useAuthState(auth);
   const ref = user ? firebase.database().ref(`users/${user.uid}`) : null;
   const [userData, userLoading] = useObjectVal(ref);
-  console.log(user, userData);
   useEffect(() => {
     const answer = window.localStorage.getItem("answer");
     if (answer && user && (!userData || userData.answer !== answer)) {
@@ -36,7 +35,7 @@ export const WeddingReception = () => {
     }
   }, [user, ref, userData]);
   useEffect(() => {
-    if (user && !userLoading && (!userData || !userData.displayName)) {
+    if (!authLoading && user && !userLoading && userData === null) {
       ref.update({
         displayName: user.displayName,
         email: user.email,
@@ -44,7 +43,7 @@ export const WeddingReception = () => {
         guest: 0,
       });
     }
-  }, [user, userData, userLoading, ref]);
+  }, [user, userData, userLoading, ref, authLoading]);
   const handleRSVP = useCallback(
     async (e) => {
       if (!user) {
