@@ -9,6 +9,7 @@ import footer from "../static/footer.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useObjectVal } from "react-firebase-hooks/database";
 import firebase from "../Firebase";
+import ClipLoader from "react-spinners/ClipLoader";
 const auth = firebase.auth();
 const login = async () => {
   const provider = new firebase.auth.FacebookAuthProvider();
@@ -97,7 +98,7 @@ export const WeddingReception = () => {
           <p className="text-2xl font-bold">6:00pm onwards</p>
           <p className="text-rose my-3">(Cocktail reception)</p>
 
-          {!authLoading && !userData?.answer && (
+          {!authLoading && !userLoading && !userData?.answer && (
             <>
               <p className="mt-6 w-3/4 mx-auto">
                 We would love to know if you can join our wedding reception.{" "}
@@ -199,6 +200,14 @@ export const WeddingReception = () => {
               </div>
             </>
           )}
+
+          <div className="my-6">
+            <ClipLoader
+              size={100}
+              color={"#E0A083"}
+              loading={authLoading || userLoading}
+            />
+          </div>
         </div>
         <div className="wedding-location-wrapper">
           <WeddingLocation date="29" />
