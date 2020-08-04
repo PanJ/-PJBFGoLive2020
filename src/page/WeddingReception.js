@@ -99,7 +99,7 @@ export const WeddingReception = () => {
         <a
           rel="noopener noreferrer"
           target="_blank"
-          href="https://calendar.google.com/calendar/r/eventedit?text=Baifern+%26+PanJ+Wedding+Reception&dates=20200829T110000Z/20200829T150000Z&details=For+details,+please+see+here:+https://w.panjs.com/b&location=Grand+Mercure+Bangkok+Fortune"
+          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20200829T110000Z%2F20200829T150000Z&text=Baifern%20%26%20PanJ%20Wedding%20Reception&location=Grand%20Mercure%20Bangkok%20Fortune&details=For%20details%2C%20please%20see%20here%3A%20https%3A%2F%2Fw.panjs.com%2Fb"
           className="mx-auto text-large font-bold inline-block text-white bg-rose block my-2 mx-2 mb-12 font-en p-3 rounded"
         >
           Add to Google Calendar
