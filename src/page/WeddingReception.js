@@ -83,6 +83,13 @@ export const WeddingReception = () => {
     [ref]
   );
 
+  if (authLoading || userLoading) {
+    return (
+      <div className="flex flex-col w-full h-screen items-center justify-center">
+        <ClipLoader size={80} color={"#E0A083"} loading />
+      </div>
+    );
+  }
   return (
     <Layout>
       <img className="w-full" src={heroImage} alt="PJBF" />
