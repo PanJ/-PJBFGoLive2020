@@ -27,7 +27,7 @@ export const WeddingReception = () => {
   const [userData, userLoading] = useObjectVal(ref);
   useEffect(() => {
     const answer = window.localStorage.getItem("answer");
-    if (answer && user && (!userData || userData.answer !== answer)) {
+    if (answer && user && userData && userData.answer !== answer) {
       ref.update({
         answer,
         guest: -1,
@@ -36,7 +36,7 @@ export const WeddingReception = () => {
     }
   }, [user, ref, userData]);
   useEffect(() => {
-    if (!authLoading && user && !userLoading && userData === null) {
+    if (!authLoading && user?.uid && !userLoading && userData === null) {
       ref.update({
         displayName: user.displayName,
         email: user.email,
