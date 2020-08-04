@@ -17,9 +17,9 @@ const login = async () => {
 };
 
 const activeButton =
-  "font-bold w-1/3 block text-white bg-rose block my-2 mx-2 font-th p-2 rounded";
+  "font-bold w-1/3 block text-white bg-rose block my-2 mx-2 font-en p-2 rounded";
 const normalButton =
-  "font-bold w-1/3 block hover:text-white hover:bg-rose block my-2 mx-2 text-rose font-th p-2 border-solid border border-rose rounded";
+  "font-bold w-1/3 block hover:text-white hover:bg-rose block my-2 mx-2 text-rose font-en p-2 border-solid border border-rose rounded";
 
 export const WeddingReception = () => {
   const [user, authLoading] = useAuthState(auth);
@@ -30,7 +30,7 @@ export const WeddingReception = () => {
     if (answer && user && (!userData || userData.answer !== answer)) {
       ref.update({
         answer,
-        guest: 0,
+        guest: -1,
       });
       window.localStorage.removeItem("answer");
     }
@@ -41,7 +41,7 @@ export const WeddingReception = () => {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        guest: 0,
+        guest: -1,
       });
     }
   }, [user, userData, userLoading, ref, authLoading]);
@@ -56,7 +56,7 @@ export const WeddingReception = () => {
       } else {
         ref.update({
           answer: e.target.value,
-          guest: 0,
+          guest: -1,
         });
       }
     },
@@ -64,8 +64,12 @@ export const WeddingReception = () => {
   );
   const handleGuest = useCallback(
     async (e) => {
+      const guest =
+        (!e.target.value || e.target.value) === "null"
+          ? null
+          : parseInt(e.target.value);
       ref.update({
-        guest: parseInt(e.target.value),
+        guest,
       });
     },
     [ref]
@@ -88,9 +92,20 @@ export const WeddingReception = () => {
       <div className="px-10 pt-8">
         <img className="mx-auto" src={names} alt="Kornkanok and Panjamapong" />
       </div>
-      <div className="my-12 font-en text-rose text-center font-bold text-2xl tracking-widest">
+      <div className="my-12 mb-4 font-en text-rose text-center font-bold text-2xl tracking-widest">
         <div>Wedding Reception</div>
       </div>
+      <div className="text-center">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://calendar.google.com/calendar/r/eventedit?text=Baifern+%26+PanJ+Wedding+Reception&dates=20200829T110000Z/20200829T150000Z&details=For+details,+please+see+here:+https://w.panjs.com/b&location=Grand+Mercure+Bangkok+Fortune"
+          className="mx-auto text-large font-bold inline-block text-white bg-rose block my-2 mx-2 mb-12 font-en p-3 rounded"
+        >
+          Add to Google Calendar
+        </a>
+      </div>
+
       <MainWrapper>
         <WeddingDate date="29" />
         <div className="text-center font-en text-green py-8">
@@ -121,15 +136,15 @@ export const WeddingReception = () => {
               </div>
             </>
           )}
-          {!authLoading && userData?.answer === "yes" && (
+          {!authLoading && userData?.answer === "yes" && userData?.guest < 0 && (
             <>
               <p className="mt-6 w-3/4 mx-auto">
-                See you! Could you tell us how many guests are you bringing?
-                (Excluding yourself)
+                Could you tell us how many guests are you bringing? (Excluding
+                yourself)
               </p>
               <div className="flex flex-row mx-6 mt-5">
                 <button
-                  value={0}
+                  value="0"
                   onClick={handleGuest}
                   className={
                     !userData?.guest || userData?.guest === 0
@@ -141,7 +156,7 @@ export const WeddingReception = () => {
                 </button>
 
                 <button
-                  value={1}
+                  value="1"
                   onClick={handleGuest}
                   className={
                     userData?.guest === 1 ? activeButton : normalButton
@@ -150,7 +165,7 @@ export const WeddingReception = () => {
                   1 guest
                 </button>
                 <button
-                  value={2}
+                  value="2"
                   onClick={handleGuest}
                   className={
                     userData?.guest === 2 ? activeButton : normalButton
@@ -161,7 +176,24 @@ export const WeddingReception = () => {
               </div>
               <div className="flex flex-row mx-6 mt-5">
                 <button
-                  value={null}
+                  value=""
+                  onClick={handleRSVP}
+                  className="w-full block my-2 mx-2 text-rose font-th p-2"
+                >
+                  Change my answer
+                </button>
+              </div>
+            </>
+          )}
+
+          {!authLoading && userData?.answer === "yes" && userData?.guest >= 0 && (
+            <>
+              <p className="mt-6 w-3/4 mx-auto">
+                We received your response. See you at the event!!!
+              </p>
+              <div className="flex flex-row mx-6 mt-5">
+                <button
+                  value=""
                   onClick={handleRSVP}
                   className="w-full block my-2 mx-2 text-rose font-th p-2"
                 >
@@ -191,7 +223,7 @@ export const WeddingReception = () => {
 
               <div className="flex flex-row mx-6 mt-5">
                 <button
-                  value={null}
+                  value=""
                   onClick={handleRSVP}
                   className="w-full block hover:text-white hover:bg-rose block my-2 mx-2 text-rose font-th p-2 border-solid border border-rose rounded"
                 >

@@ -4,8 +4,8 @@ import bg22 from "../static/calendar-bg-22.png";
 import bg29 from "../static/calendar-bg-29.png";
 
 const offset = {
-  "22": { left: "-23px", top: "-65px" },
-  "29": { left: "-42px", top: "-70px" },
+  "22": { left: "-23px", top: "-65px", zIndex: -1 },
+  "29": { left: "-42px", top: "-70px", zIndex: -1 },
 };
 
 export default ({ date }) => {
