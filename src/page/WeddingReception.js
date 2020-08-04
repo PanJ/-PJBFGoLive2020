@@ -95,16 +95,6 @@ export const WeddingReception = () => {
       <div className="my-12 mb-4 font-en text-rose text-center font-bold text-2xl tracking-widest">
         <div>Wedding Reception</div>
       </div>
-      <div className="text-center">
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20200829T110000Z%2F20200829T150000Z&text=Baifern%20%26%20PanJ%20Wedding%20Reception&location=Grand%20Mercure%20Bangkok%20Fortune&details=For%20details%2C%20please%20see%20here%3A%20https%3A%2F%2Fw.panjs.com%2Fb"
-          className="mx-auto text-large font-bold inline-block text-white bg-rose block my-2 mx-2 mb-12 font-en p-3 rounded"
-        >
-          Add to Google Calendar
-        </a>
-      </div>
 
       <MainWrapper>
         <WeddingDate date="29" />
@@ -191,6 +181,16 @@ export const WeddingReception = () => {
               <p className="mt-6 w-3/4 mx-auto">
                 We received your response. See you at the event!!!
               </p>
+              <div className="text-center">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20200829T110000Z%2F20200829T150000Z&text=Baifern%20%26%20PanJ%20Wedding%20Reception&location=Grand%20Mercure%20Bangkok%20Fortune&details=For%20details%2C%20please%20see%20here%3A%20https%3A%2F%2Fw.panjs.com%2Fb"
+                  className="mx-auto text-large font-bold inline-block text-white bg-rose block my-4 mx-2 font-en p-3 rounded"
+                >
+                  Add to Google Calendar
+                </a>
+              </div>
               <div className="flex flex-row mx-6 mt-5">
                 <button
                   value=""
