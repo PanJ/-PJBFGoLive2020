@@ -121,14 +121,20 @@ export const WeddingReception = () => {
                   onClick={handleRSVP}
                   className="font-bold w-1/2 block hover:text-white hover:bg-rose block my-2 mx-2 text-rose font-th p-2 border-solid border border-rose rounded"
                 >
-                  Can't go 😞
+                  Can't go{" "}
+                  <span role="img" aria-label="Sad emoji">
+                    😞
+                  </span>
                 </button>
                 <button
                   value="yes"
                   onClick={handleRSVP}
                   className="font-bold w-1/2 block text-white bg-rose block my-2 mx-2 font-th p-2 rounded"
                 >
-                  Going! 🎉
+                  Going!{" "}
+                  <span role="img" aria-label="Hooray">
+                    🎉
+                  </span>
                 </button>
               </div>
             </>
